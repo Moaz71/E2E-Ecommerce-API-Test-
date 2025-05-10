@@ -54,12 +54,23 @@ Each request includes Postman test scripts to:
 
 ## ▶️ How to Run
 
+### 🖥️ Using Postman GUI
 1. Open Postman.
 2. Import both files:
    - Collection: `E2E Ecommerce API Test.postman_collection.json`
    - Environment: `E2E Ecommerce Env.postman_environment.json`
 3. Select the imported environment from the top-right dropdown.
 4. Run the collection using the Postman Runner to simulate the full e-commerce transaction.
+
+### 💻 Using Newman CLI
+```bash
+# Install required packages
+npm install -g newman newman-reporter-htmlextra
+
+# Basic run with HTML report
+newman run "E2E Ecommerce API Test.postman_collection.json" \
+  -e "E2E Ecommerce Env.postman_environment.json" \
+  -r htmlextra 
 
 ## 🛠️ Author
 
