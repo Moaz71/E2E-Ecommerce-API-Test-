@@ -71,6 +71,15 @@ npm install -g newman newman-reporter-htmlextra
 newman run "E2E Ecommerce API Test.postman_collection.json" \
   -e "E2E Ecommerce Env.postman_environment.json" \
   -r htmlextra 
+```
+
+### ⚙️ Using Jenkins CI/CD
+- Jenkins was used to automate test execution using Newman.
+- A freestyle project was configured with the following steps:
+  - Pull the latest test collection and environment from the repository.
+  - Run the Newman command (as above) inside a Jenkins build step.
+  - Generate and archive HTML reports using the `newman-reporter-htmlextra`.
+- This integration ensures continuous testing and reporting as part of the CI/CD pipeline.
 
 ## 🛠️ Author
 
